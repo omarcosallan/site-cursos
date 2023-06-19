@@ -141,7 +141,11 @@ export function listaAlunos() {
     let matriculados = pessoas.filter(
       (pessoa) => pessoa.curso === curso
     ).length;
-    tituloElement.textContent = `${matriculados} alunos matriculados. Restam ${cursos[curso]} vagas.`;
+    if (matriculados > 0) {
+      tituloElement.textContent = `${matriculados} alunos matriculados. Restam ${cursos[curso]} vagas.`;
+    } else {
+      tituloElement.textContent = `Não há alunos matriculados.`;
+    }
   } else {
     tituloElement.textContent = `Não há alunos matriculados.`;
   }
