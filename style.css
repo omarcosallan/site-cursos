@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Martel Sans", sans-serif;
+}
+
+main {
+  background-color: #f3f5fc;
+  padding: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+header {
+  background-color: #f3f5fc;
+  text-align: center;
+}
+
+#logo {
+  width: 25%;
+}
+
+h2 {
+  color: #0a3771;
+  padding: 1rem 2rem;
+}
+
+strong {
+  color: #0a3771;
+}
+
+p,
+strong {
+  margin: 1rem 0 1rem 0;
+  padding-inline: 1rem;
+}
+
+h3 {
+  margin: 2rem 0 0 0;
+  padding-inline: 1rem;
+}
+
+img {
+  border-radius: 0.2rem;
+}
+
+li a {
+  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover {
+  text-decoration: underline;
+  color: #1967d2;
+}
+
+li a img {
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-size: 1.5rem;
+}
+
+ul {
+  padding: 1rem 2rem;
+}
+
+table img {
+  width: 550px;
+  height: 275px;
+  margin-right: 3rem;
+}
+
+.curso-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0px 20px 40px -8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.mais-cursos {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.mais-cursos li {
+  width: 25%;
+}
+
+.mais-cursos li a {
+  display: flex;
+  flex-direction: column;
+}
+
+.mais-cursos img {
+  width: 98%;
+  height: 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+
+  background-color: #ffffff;
+  box-shadow: 0px 20px 40px -8px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border-radius: 0.4rem;
+}
+
+form strong {
+  text-align: center;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 700;
+
+  width: 80%;
+  margin-inline: auto;
+}
+
+input {
+  margin-bottom: 10px;
+  border: 1px solid #0a3771;
+  padding: 0.8rem 1rem;
+  width: 80%;
+  border-radius: 0.4rem;
+  margin-inline: auto;
+  font-family: "Martel Sans", sans-serif;
+  font-size: 1rem;
+}
+
+#submit {
+  background-color: #0a3771;
+  color: #f3f5fc;
+  font-weight: 700;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.campo-valido {
+  border: 1px solid green;
+}
+
+.campo-invalido {
+  border: 1px solid red;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+}
+
+#submit {
+  margin-top: 1.5rem;
+}
+
+.mensagem-invalida {
+  height: 2rem;
+  color: rgb(250, 81, 81);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.div-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lista-pessoas {
+  text-align: center;
+  list-style: none;
+}
+
+.lista-clicado {
+  display: none;
+}
+
+#lista-pessoas li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.5rem 0;
+}
+
+.btn-excluir,
+.visualizar-matriculados {
+  background-color: #0a3771;
+  color: #f3f5fc;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+footer p {
+  text-align: center;
+  font-weight: 700;
+}
