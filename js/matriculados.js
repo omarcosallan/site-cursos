@@ -137,11 +137,14 @@ export function listaAlunos() {
   const pessoasSalvas = localStorage.getItem("alunos");
   const pessoas = JSON.parse(pessoasSalvas);
 
-  const matriculados = pessoas.filter(
-    (pessoa) => pessoa.curso === curso
-  ).length;
-
-  tituloElement.textContent = `${matriculados} alunos matriculados. Restam ${cursos[curso]} vagas.`;
+  if (pessoas != null) {
+    let matriculados = pessoas.filter(
+      (pessoa) => pessoa.curso === curso
+    ).length;
+    tituloElement.textContent = `${matriculados} alunos matriculados. Restam ${cursos[curso]} vagas.`;
+  } else {
+    tituloElement.textContent = `Não há alunos matriculados.`;
+  }
 }
 
 export function vagasDisponiveis(cursos) {
