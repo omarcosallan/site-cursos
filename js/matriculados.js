@@ -38,7 +38,8 @@ export function adicionarPessoa(cpf, nome, email, curso) {
   localStorage.setItem("alunos", JSON.stringify(alunos));
 
   // Atualizar o número de vagas no localStorage
-  cursos[curso] -= 1;
+  const cursoLs = cursos.find((c) => (c.titulo = curso));
+  cursoLs.vagas -= 1;
   localStorage.setItem("cursos", JSON.stringify(cursos));
 
   vagasDisponiveis(cursos);
@@ -89,8 +90,11 @@ function excluirPessoa(cpf) {
       cursos = JSON.parse(cursosSalvos);
     }
 
-    if (cursos && cursos.hasOwnProperty(alunoRemovido.curso)) {
-      cursos[alunoRemovido.curso] += 1;
+    const cursoRemovido = cursos.find(
+      (curso) => curso.titulo === alunoRemovido.curso
+    );
+    if (cursoRemovido) {
+      cursoRemovido.vagas += 1;
     }
 
     // Atualizar o LocalStorage com a nova quantidade de vagas do curso
@@ -124,7 +128,8 @@ export function carregarPessoas() {
 export function atualizaVagas(cursos) {
   const tituloElement = document.querySelector(".titulo");
   const vagasElement = document.querySelector(".vagas");
-  vagasElement.textContent = `${cursos[tituloElement.textContent]} vagas`;
+  const cursoLs = cursos.find((c) => (c.titulo = tituloElement));
+  vagasElement.textContent = `${cursoLs.vagas} vagas`;
 }
 
 export function listaAlunos() {
@@ -142,7 +147,8 @@ export function listaAlunos() {
       (pessoa) => pessoa.curso === curso
     ).length;
     if (matriculados > 0) {
-      tituloElement.textContent = `${matriculados} alunos matriculados. Restam ${cursos[curso]} vagas.`;
+      const cursoLs = cursos.find((c) => (c.titulo = curso));
+      tituloElement.textContent = `${matriculados} alunos matriculados. Restam ${cursoLs.vagas} vagas.`;
     } else {
       tituloElement.textContent = `Não há alunos matriculados.`;
     }
